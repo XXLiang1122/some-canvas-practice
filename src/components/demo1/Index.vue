@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, onMounted, computed } from 'vue'
+import { ref, defineComponent, onMounted, onUnmounted } from 'vue'
 
 export default defineComponent({
   name: 'Demo1',
@@ -31,11 +31,17 @@ export default defineComponent({
     }
 
     const onDraw = () => {
-      (canvas.value as HTMLCanvasElement).onmousedown = () => {
+      (canvas.value as HTMLCanvasElement).onmousedown = e => {
         isDraw = true
+        const position = canvas.value?.getBoundingClientRect() as DOMRect
+        const x = e.pageX - position.left
+        const y = e.pageY - position.top
+        ctx.beginPath()
+        ctx.moveTo(x, y)
       }
       document.onmouseup = () => {
         isDraw = false
+        ctx.closePath()
       }
       (canvas.value as HTMLCanvasElement).onmousemove = e => {
         if (isDraw) {
@@ -43,10 +49,10 @@ export default defineComponent({
           const x = e.pageX - position.left
           const y = e.pageY - position.top
           ctx.globalCompositeOperation = 'destination-out'
-          ctx.beginPath()
-          ctx.arc(x, y, 25, 0, 2 * Math.PI)
-          ctx.fill()
-          ctx.closePath()
+          ctx.lineWidth = 30
+          ctx.strokeStyle = '#000000'
+          ctx.lineTo(x, y)
+          ctx.stroke()
         }
       }
     }

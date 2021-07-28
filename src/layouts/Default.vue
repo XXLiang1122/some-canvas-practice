@@ -27,7 +27,11 @@ export default defineComponent({
       },
       {
         path: '/demo2',
-        label: 'demo2'
+        label: '画板'
+      },
+      {
+        path: '/demo3',
+        label: '时钟'
       }
     ])
     return {
@@ -64,6 +68,6 @@ ul {
   min-width: 1000px;
   margin: 30px auto;
   padding: 30px;
-  background-color: @blue;
+  // background-color: @blue;
 }
 </style>
