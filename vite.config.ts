@@ -5,6 +5,7 @@ import styleImport from 'vite-plugin-style-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     styleImport({
@@ -25,7 +26,7 @@ export default defineConfig({
   resolve: {
     alias: [{
       find: '@',
-      replacement: path.resolve(__dirname, 'src')
+      replacement: path.resolve(__dirname, './src')
     }]
   },
   css: {
