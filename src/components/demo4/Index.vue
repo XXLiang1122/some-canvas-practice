@@ -10,7 +10,7 @@ import { ref, defineComponent, onMounted } from 'vue'
 import { checkState } from './const'
 
 export default defineComponent({
-  name: 'Demo3',
+  name: 'Demo4',
   setup: () => {
     const canvas = ref<HTMLCanvasElement | null>(null)
     let ctx: CanvasRenderingContext2D
@@ -103,7 +103,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .canvas {
   margin-top: 20px;
 }

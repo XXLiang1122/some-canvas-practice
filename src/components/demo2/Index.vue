@@ -140,7 +140,7 @@ export default defineComponent({
         beginY + (y - beginY) / 2,
         r,
         0,
-        Math.PI * 2 * r
+        Math.PI * 2
       )
       ctx.stroke()
       ctx.closePath()

@@ -36,6 +36,10 @@ export default defineComponent({
       {
         path: '/demo4',
         label: '五子棋'
+      },
+      {
+        path: '/demo5',
+        label: '粒子运动'
       }
     ])
     return {

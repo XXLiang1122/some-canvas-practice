@@ -30,7 +30,7 @@ export default defineComponent({
       ctx.strokeStyle = '#000000'
       ctx.fillStyle = '#000000'
       ctx.beginPath()
-      ctx.arc(0, 0, 180, 0, Math.PI * 2 * 180)
+      ctx.arc(0, 0, 180, 0, Math.PI * 2)
       ctx.stroke()
 
       /** 时针刻度 */
@@ -95,7 +95,7 @@ export default defineComponent({
 
       /** 中心点 */
       ctx.beginPath()
-      ctx.arc(0, 0, 10, 0, Math.PI * 2 * 10)
+      ctx.arc(0, 0, 10, 0, Math.PI * 2)
       ctx.fill()
 
       window.requestAnimationFrame(drawClock)
