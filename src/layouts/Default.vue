@@ -32,6 +32,10 @@ export default defineComponent({
       {
         path: '/demo3',
         label: '时钟'
+      },
+      {
+        path: '/demo4',
+        label: '五子棋'
       }
     ])
     return {
