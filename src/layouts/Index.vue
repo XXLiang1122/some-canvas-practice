@@ -10,10 +10,11 @@ import { useRoute } from 'vue-router'
 import DefaultLayout from '@/layouts/Default.vue'
 
 const LAYOUT_MAP: Record<layoutTypes, Function> = {
-  default: () => import('@/layouts/Default.vue')
+  default: () => import('@/layouts/Default.vue'),
+  custom: () => import('@/layouts/Custom.vue')
 }
 
-type layoutTypes = 'default'
+type layoutTypes = 'default' | 'custom'
 
 export default defineComponent({
   name: 'Layouts',

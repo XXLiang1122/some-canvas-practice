@@ -50,6 +50,7 @@ export default defineComponent({
           const y = e.pageY - position.top
           ctx.globalCompositeOperation = 'destination-out'
           ctx.lineWidth = 30
+          ctx.lineCap = 'round'
           ctx.strokeStyle = '#000000'
           ctx.lineTo(x, y)
           ctx.stroke()

@@ -22,6 +22,8 @@ export default defineComponent({
   padding: 0;
 }
 body {
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: #fff;
 }
 #app {

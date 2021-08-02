@@ -1,14 +1,5 @@
 <template>
-  <ul>
-    <li
-      v-for="route in routes"
-      :key="route.label"
-    >
-      <router-link :to="route.path">
-        {{ route.label }}
-      </router-link>
-    </li>
-  </ul>
+  <Header />
   <div class="container">
     <slot />
   </div>
@@ -16,59 +7,17 @@
 
 <script lang="ts">
 import { defineComponent, markRaw } from 'vue'
+import Header from '@/construct/Header.vue'
 
 export default defineComponent({
   name: 'DefaultLayout',
-  setup: () => {
-    const routes = markRaw([
-      {
-        path: '/demo1',
-        label: '刮刮乐'
-      },
-      {
-        path: '/demo2',
-        label: '画板'
-      },
-      {
-        path: '/demo3',
-        label: '时钟'
-      },
-      {
-        path: '/demo4',
-        label: '五子棋'
-      },
-      {
-        path: '/demo5',
-        label: '粒子运动'
-      }
-    ])
-    return {
-      routes
-    }
+  components: {
+    Header
   }
 })
 </script>
 
 <style lang="less" scoped>
-ul {
-  position: sticky;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  li {
-    margin-right: 20px;
-    list-style: none;
-    line-height: 2;
-    font-size: 18px;
-    &:not(:last-of-type)::after {
-      content: '|';
-    }
-  }
-  a {
-    margin-right: 20px;
-  }
-}
 .container {
   display: flex;
   justify-content: center;

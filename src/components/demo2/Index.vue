@@ -66,6 +66,7 @@ export default defineComponent({
       ctx.fillStyle = '#ffffff'
       ctx.fillRect(0, 0, 800, 600)
       lineWidth.value = 5
+      ctx.lineCap = 'round'
     }
 
     const onDraw = () => {

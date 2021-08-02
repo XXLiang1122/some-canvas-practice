@@ -1,11 +1,11 @@
 <template>
   <div class="content">
-    <canvas ref="canvas" class="canvas"/>
+    <canvas ref="canvas" class="canvas" />
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, onMounted, h } from 'vue'
+import { ref, defineComponent, onMounted } from 'vue'
 
 interface Point {
   x: number;
@@ -24,7 +24,7 @@ export default defineComponent({
     let points: Point[] = []
     let pageX = 0
     let pageY = 0
-    const color = 'rgba(0,0,0,.5)'
+    const color = '#fff'
 
     onMounted (() => {
       init()
@@ -34,13 +34,11 @@ export default defineComponent({
     })
 
     const init = () => {
-      width = window.screen.width
-      height = window.screen.height;
+      width = document.body.clientWidth
+      height = document.body.clientHeight;
       (canvas.value as HTMLCanvasElement).width = width;
       (canvas.value as HTMLCanvasElement).height = height
       ctx = canvas.value?.getContext('2d') as CanvasRenderingContext2D
-      ctx.fillStyle = '#fff'
-      ctx.fillRect(0, 0, width, height)
     }
 
     /** 生成粒子 */
@@ -58,6 +56,8 @@ export default defineComponent({
     /** 渲染粒子 */
     const drawPoints = () => {
       ctx.clearRect(0, 0, width, height)
+      ctx.fillStyle = '#000'
+      ctx.fillRect(0, 0, width, height)
       ctx.fillStyle = color
       points.forEach(p => {
         ctx.beginPath()
@@ -135,10 +135,4 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
 </style>
