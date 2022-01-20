@@ -20,27 +20,31 @@ export default defineComponent({
     const routes = markRaw([
       {
         path: '/demo1',
-        label: '刮刮乐'
+        label: '💸 刮刮乐'
       },
       {
         path: '/demo2',
-        label: '画板'
+        label: '🖌 画板'
       },
       {
         path: '/demo3',
-        label: '时钟'
+        label: '⏰ 时钟'
       },
       {
         path: '/demo4',
-        label: '五子棋'
+        label: '♟ 五子棋'
       },
       {
         path: '/demo5',
-        label: '粒子运动'
+        label: '⚛ 粒子运动'
       },
       {
         path: '/demo6',
-        label: '贪吃蛇'
+        label: '🐍 贪吃蛇'
+      },
+      {
+        path: '/demo7',
+        label: '🚘 开车'
       }
     ])
     return {

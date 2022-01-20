@@ -6,6 +6,7 @@ const Demo3 = () => import('@/components/demo3/Index.vue')
 const Demo4 = () => import('@/components/demo4/Index.vue')
 const Demo5 = () => import('@/components/demo5/Index.vue')
 const Demo6 = () => import('@/components/demo6/Index.vue')
+const Demo7 = () => import('@/components/demo7/Index.vue')
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -60,6 +61,14 @@ const router = createRouter({
       path: '/demo6',
       name: 'Demo6',
       component: Demo6,
+      meta: {
+        layout: 'default'
+      }
+    },
+    {
+      path: '/demo7',
+      name: 'Demo7',
+      component: Demo7,
       meta: {
         layout: 'default'
       }
